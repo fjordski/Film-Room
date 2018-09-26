@@ -1,0 +1,42 @@
+{
+  "name": "quiplash",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve & node app.js",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "firebase": "^5.5.0",
+    "firebaseui": "^3.4.1",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
+    "socket.io-stream": "^0.9.1",
+    "vue": "^2.5.17",
+    "vue-firebase": "^1.0.8",
+    "vue-router": "^3.0.1",
+    "vue-youtube": "^1.2.5",
+    "vuex": "^3.0.1",
+    "youtube-dl": "^1.12.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.3",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.0.3",
+    "@vue/cli-plugin-eslint": "^3.0.3",
+    "@vue/cli-plugin-unit-jest": "^3.0.3",
+    "@vue/cli-service": "^3.0.3",
+    "@vue/eslint-config-airbnb": "^3.0.3",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
