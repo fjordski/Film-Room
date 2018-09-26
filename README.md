@@ -1,4 +1,4 @@
-# quiplash
+# Film Room
 
 ## Project setup
 ```
