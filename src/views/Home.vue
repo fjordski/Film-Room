@@ -12,11 +12,9 @@
         <button class='btn btn-primary pull-right mt-2' @click='sendMessage'>Send Message</button>
         <input v-model='videoID' class='form-control mt-2' type='text' placeholder='share youtube video (uri)'>
         <button class='btn btn-primary pull-right mt-2' @click='shareVideo'>Share Video</button>
-        <!-- <button class='btn btn-primary pull-right mt-2' @click='downloadVideo'>Download Video</button> -->
       </div>
     </div>
     <you-tube-display ref='youTubeDisplay' :video='video'></you-tube-display>
-    <!-- <video-display :video='video' :key='video'></video-display> -->
     <p>Number of users connected: {{ connectedUsers.length }}</p>
   </div>
 </template>
@@ -72,17 +70,6 @@ export default {
         video: this.videoID,
       });
     },
-    // downloadVideo(e) {
-    //   e.preventDefault();
-    //   const URI = this.videoID;
-    //   this.videoSRC = '';
-    //   this.socket.emit('DOWNLOAD_VIDEO', {
-    //     video: URI,
-    //   });
-    //   this.socket.on('VIDEO_START', (data) => {
-    //     this.video = `../assets/videos/${data}.mp4`;
-    //   });
-    // },
     sendMessage(e) {
       e.preventDefault();
       this.socket.emit('SEND_MESSAGE', {

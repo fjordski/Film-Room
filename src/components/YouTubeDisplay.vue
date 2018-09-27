@@ -3,7 +3,6 @@
   <p v-if='! video'>...waiting for video!</p>
   <div v-if='video'>
     <h1>hey</h1>
-    <!-- <iframe id='player' ref='player' width="560" height="315" :src='videoSrc' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
     <youtube ref='youtube' :video-id="videoId" :player-vars="playerVars" @playing="playing"></youtube>
     <button @click='videoAction("play")'>play</button>
     <button @click='videoAction("stop")'>stop</button>
@@ -13,13 +12,13 @@
 <script>
 import store from '../store';
 import io from 'socket.io-client';
+import { YouTubeGetID } from '../helpers/helperFunctions.js';
 
 export default {
   data: () => ({
     embeddedVideo: '',
     store,
     player: null,
-    videoId: 'lG0Ys-2d4MA',
       playerVars: {
       autoplay: 0,
     },
@@ -35,9 +34,9 @@ export default {
     }
   },
   computed: {
-    videoSrc() {
-      return `https://www.youtube.com/embed/${this.video}?enablejsapi=1`;
-    },
+    videoId() {
+      return YouTubeGetID(this.video);
+    }
   },
   mounted() {
     this.socket.on('PLAY', () => {
