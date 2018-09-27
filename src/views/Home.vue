@@ -24,7 +24,6 @@
 <script>
 import GoogleAuth from '../components/Login';
 import YouTubeDisplay from '../components/YouTubeDisplay';
-import VideoDisplay from '../components/VideoDisplay';
 import io from 'socket.io-client';
 import store from '../store';
 
@@ -32,7 +31,6 @@ export default {
   components: {
     GoogleAuth,
     YouTubeDisplay,
-    VideoDisplay,
   },
   data: () => ({
     user: null,

@@ -37,4 +37,8 @@ function onConnect(socket) {
   socket.on('PLAY_VIDEO', () => {
     io.emit('PLAY');
   });
+
+  socket.on('STOP_VIDEO', () => {
+    io.emit('STOP');
+  });
 };

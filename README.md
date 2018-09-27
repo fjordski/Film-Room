@@ -1,5 +1,13 @@
 # Film Room
 
+## TODO
+make videos stateful
+fully integrate controls
+overhaul ui
+build tests
+integrate microphone capabilities
+fix connected users issue (vuex)
+
 ## Project setup
 ```
 npm install

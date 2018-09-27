@@ -5,7 +5,8 @@
     <h1>hey</h1>
     <!-- <iframe id='player' ref='player' width="560" height="315" :src='videoSrc' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
     <youtube ref='youtube' :video-id="videoId" :player-vars="playerVars" @playing="playing"></youtube>
-    <button @click='playVideo'>play</button>
+    <button @click='videoAction("play")'>play</button>
+    <button @click='videoAction("stop")'>stop</button>
   </div>
 </div>
 </template>
@@ -25,8 +26,9 @@ export default {
     socket: io('localhost:3001'),
   }),
   methods: {
-    playVideo() {
-      this.socket.emit('PLAY_VIDEO');
+    videoAction(action) {
+      const actionParsed = action.toUpperCase();
+      this.socket.emit(`${actionParsed}_VIDEO`);
     },
     playing() {
       console.log('\o/ we are watching!!!')
@@ -40,6 +42,9 @@ export default {
   mounted() {
     this.socket.on('PLAY', () => {
       this.$refs.youtube.player.playVideo();
+    });
+    this.socket.on('STOP', () => {
+      this.$refs.youtube.player.pauseVideo();
     });
   },
   props: ['video'],
