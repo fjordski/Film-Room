@@ -8,15 +8,9 @@ const server = app.listen(3001, function() {
   console.log('server running on port 3001');
 });
 
-
 const io = require('socket.io')(server);
 
 io.on('connect', onConnect);
-
-function YouTubeGetID(url){
-  url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
-  return (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
-}
 
 function onConnect(socket) {
   socket.on('GET_CLIENTS', () => {
