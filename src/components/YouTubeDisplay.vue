@@ -2,7 +2,6 @@
 <div class='root'>
   <p v-if='! video'>...waiting for video!</p>
   <div v-if='video'>
-    <h1>hey</h1>
     <youtube ref='youtube' :video-id="videoId" :player-vars="playerVars" @playing="playing"></youtube>
     <button @click='videoAction("play")'>play</button>
     <button @click='videoAction("stop")'>stop</button>
@@ -49,12 +48,3 @@ export default {
   props: ['video'],
 };
 </script>
-
-
-const config = {
-    height: 320,
-    width: 400,
-    videoId: '6Dc1C77nra4',
-    events: {
-      'onReady': onPlayerReady,
-    }
