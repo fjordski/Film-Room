@@ -1,7 +1,7 @@
 <template>
   <div class="root">
-    <span v-if='! store.state.USER' class="glyphicon glyphicon-log-in" @click='googleAuth'> Login</span>
-    <span v-if='store.state.USER' class="glyphicon glyphicon-log-in" @click='logOut'> Logout</span>
+    <v-btn small v-if='! store.state.USER' @click='googleAuth'> Login</v-btn>
+    <v-btn small v-if='store.state.USER' @click='logOut'> Logout</v-btn>
   </div>
 </template>
 <script>

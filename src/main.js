@@ -3,6 +3,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import VueYoutube from 'vue-youtube'
+import Vuetify from 'vuetify'
 
 import * as firebase from "firebase";
 import VueFirebase from 'vue-firebase'
@@ -18,10 +19,9 @@ const FBCONFIG = {
 
 Vue.use(VueFirebase, { firebase: firebase, config: FBCONFIG });
 Vue.use(VueYoutube);
+Vue.use(Vuetify);
 
 Vue.config.productionTip = false;
-
-const EventBus = new Vue();
 
 new Vue({
   router,
@@ -29,12 +29,11 @@ new Vue({
   created() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log('we got a user')
+        this.$router.push('/');
       } else {
-        console.log('no see')
-        // this.$router.push('/auth')
+        this.$router.push('/auth');
       }
-     });
+    });
   },
   render: h => h(App),
 }).$mount('#app');
