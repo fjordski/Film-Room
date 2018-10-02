@@ -1,12 +1,7 @@
 # Film Room
 
 ## TODO
-make videos stateful
-fully integrate controls
-overhaul ui
-build tests
-integrate microphone capabilities
-fix connected users issue (vuex)
+Film sharing application that will allow multiple users to stream and comment on videos in real time. Designed with sports teams film review process in mind. (WIP)
 
 ## Project setup
 ```
