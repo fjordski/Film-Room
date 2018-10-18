@@ -9,7 +9,7 @@ import * as firebase from "firebase";
 import VueFirebase from 'vue-firebase'
 
 const FBCONFIG = {
-  apiKey: "AIzaSyAesf5GKaCAlSThVoUYisdfvoKykCFCcHU",
+  apiKey: "",
   authDomain: "trash-pandas.firebaseapp.com",
   databaseURL: "xxx",
   projectId: "trash-pandas",
